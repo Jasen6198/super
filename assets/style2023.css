@@ -11,7 +11,12 @@ body {
     --bs-accordion-active-bg: #fde2e5;
     --bs-accordion-active-color: #fde2e5;
     --bs-accordion-btn-focus-border-color: #fde2e5;
-    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.15rem #ff5d70;
+    /* 取消点击后的边框效果 */
+    --bs-accordion-btn-focus-box-shadow: ;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 0 0 0.15rem #ff5d70;
 }
 
 #app {
@@ -34,8 +39,8 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 999;
-    background-color: #ffffff;
-    /* color: white; */
+    background-color: #fde2e5;
+    color: white;
     border: none;
     cursor: pointer;
     width: 40px;
