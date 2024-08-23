@@ -41,7 +41,32 @@
                 </div>
             </div>
             <!-- 内容 -->
-            <div v-for="(item,index) in searchResults">
+            <!-- 手风琴格式 -->
+
+            <div class="accordion" id="accordionPanels">
+                <div v-for="(item,index) in searchResults">
+                    <div class="accordion-item my-2 mx-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed text-danger" type="button"
+                                data-bs-toggle="collapse" :data-bs-target="`#${index}`" aria-expanded="false"
+                                :aria-controls="`${index}`">
+                                <strong>{{item.id}} . {{item.title}}</strong>
+                            </button>
+                        </h2>
+                        <div :id="index" class="accordion-collapse collapse" data-bs-parent="#accordionPanels">
+                            <div class="accordion-body">
+                                <p><strong>释义：</strong></p>
+                                <div class="text-secondary">
+                                    <p v-for="cont in item.content">{{cont}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card格式 -->
+            <!-- <div v-for="(item,index) in searchResults">
                 <div class="card my-3 mx-2 border-danger">
                     <h5 class="card-header">{{item.id}}</h5>
                     <div class="card-body shadow">
@@ -57,7 +82,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <!-- 底部 -->
             <div class="text-secondary mx-3">
                 <p class="text-center">END</p>
             </div>
